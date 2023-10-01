@@ -25,7 +25,7 @@ class CustomARView: ARView {
         self.init(frame: UIScreen.main.bounds)
     }
     
-    // Configuration
+    // Scene Configuration
     
     func configurationExamples(){
         // Tracks the device relative to it's environment
@@ -34,5 +34,13 @@ class CustomARView: ARView {
         session.run(configuration)
     }
     
+    // Anchor configuration
+    
+    func anchorExamples(){
+        // Attach anchors at specific coordinates in the iPhone-centered coordinate system
+        let coordinateAnchor = AnchorEntity(world: .zero)
+        // Add an anchor to the scene
+        scene.addAnchor(coordinateAnchor)
+    }
     
 }
