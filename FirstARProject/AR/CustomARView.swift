@@ -14,6 +14,9 @@ class CustomARView: ARView {
     
     private var cancellables: Set<AnyCancellable> = []
     
+    // Components
+    var ball: Ball.Cena? = nil
+    
     // Required inits
     
     required init(frame frameRect: CGRect) {
@@ -43,6 +46,8 @@ class CustomARView: ARView {
                     self?.scene.anchors.removeAll()
                 case .placeBall:
                     self?.placeBall()
+                case .playBallAnimation:
+                    self?.playBallAnimation()
                 }
             }
         // using combine means that we'll need to keep a strong reference
@@ -67,9 +72,15 @@ class CustomARView: ARView {
         do {
             let ball = try Ball.loadCena()
             scene.addAnchor(ball)
+            self.ball = ball
         } catch {
             print(error)
         }
+    }
+    
+    // Adding animation to our 3D Object
+    func playBallAnimation(){
+        ball?.notifications.myBallTrick.post()
     }
     
     // MARK: Configuration examples
