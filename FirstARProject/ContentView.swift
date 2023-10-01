@@ -18,6 +18,20 @@ struct ContentView: View {
             .overlay(alignment: .bottom){
                 ScrollView(.horizontal){
                     HStack{
+                        Button("Place") {
+                            ARManager.shared.actionsStream.send(.placeBall)
+                        }
+                        .frame(width: 40, height: 40)
+                        .padding()
+                        .background(.regularMaterial)
+                        .cornerRadius(16)
+                        Button("Jump") {
+                            ARManager.shared.actionsStream.send(.playBallAnimation)
+                        }
+                        .frame(width: 40, height: 40)
+                        .padding()
+                        .background(.regularMaterial)
+                        .cornerRadius(16)
                         Button {
                             // Passing remove action by combine
                             ARManager.shared.actionsStream.send(.removeAllAnchors)
