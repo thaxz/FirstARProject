@@ -8,8 +8,11 @@
 import ARKit
 import RealityKit
 import SwiftUI
+import Combine
 
 class CustomARView: ARView {
+    
+    private var cancellables: Set<AnyCancellable> = []
     
     // Required inits
     
@@ -24,14 +27,31 @@ class CustomARView: ARView {
     // This is the init that is being used
     convenience init(){
         self.init(frame: UIScreen.main.bounds)
-        placeBlueBlock()
+        subscribeToActionStream()
+    }
+    
+    // Subscribing to combine
+    func subscribeToActionStream(){
+        ARManager.shared.actionsStream
+        // subscribing with sink
+            .sink { [weak self] action in
+                // switching according to each action
+                switch action {
+                case .placeBlock(let color):
+                    self?.placeBlock(ofColor: color)
+                case .removeAllAnchors:
+                    self?.scene.anchors.removeAll()
+                }
+            }
+        // using combine means that we'll need to keep a strong reference
+            .store(in: &cancellables)
     }
     
     // Mock object placed in the scene
-    func placeBlueBlock(){
+    func placeBlock(ofColor color: Color){
         // Creating entity
         let block = MeshResource.generateBox(size: 1)
-        let material = SimpleMaterial(color: .blue, isMetallic: false)
+        let material = SimpleMaterial(color: UIColor(color), isMetallic: false)
         let entity = ModelEntity(mesh: block, materials: [material])
         // Connecting with anchor
         let anchor = AnchorEntity(plane: .horizontal)
