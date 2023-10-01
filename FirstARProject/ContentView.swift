@@ -34,7 +34,7 @@ struct ContentView: View {
                         
                         Button {
                             // Passing remove action by combine
-                            ARManager.shared.actionsStream.send(.removeAllAnchors)
+                            ARManager.shared.actionsStream.send(.playBallAnimation)
                         } label: {
                             Image(systemName: "arrowtriangle.up.fill")
                                 .resizable()
