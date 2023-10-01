@@ -38,9 +38,20 @@ class CustomARView: ARView {
     
     func anchorExamples(){
         // Attach anchors at specific coordinates in the iPhone-centered coordinate system
+        // Exactly the same as the iPhone was when the app was opened
         let coordinateAnchor = AnchorEntity(world: .zero)
         // Add an anchor to the scene
         scene.addAnchor(coordinateAnchor)
     }
     
+    // Entity configuration
+    func entityExamples(){
+        // Generating an entity programmaticaly
+        let box = MeshResource.generateBox(size: 1)
+        let entity = ModelEntity(mesh: box)
+        
+        // Add entity to an anchor so it's placed in the scene
+        let anchor = AnchorEntity()
+        anchor.addChild(entity)
+    }
 }
