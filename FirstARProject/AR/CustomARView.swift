@@ -41,6 +41,8 @@ class CustomARView: ARView {
                     self?.placeBlock(ofColor: color)
                 case .removeAllAnchors:
                     self?.scene.anchors.removeAll()
+                case .placeBall:
+                    self?.placeBall()
                 }
             }
         // using combine means that we'll need to keep a strong reference
@@ -50,7 +52,7 @@ class CustomARView: ARView {
     // Mock object placed in the scene
     func placeBlock(ofColor color: Color){
         // Creating entity
-        let block = MeshResource.generateBox(size: 1)
+        let block = MeshResource.generateBox(size: 0.1)
         let material = SimpleMaterial(color: UIColor(color), isMetallic: false)
         let entity = ModelEntity(mesh: block, materials: [material])
         // Connecting with anchor
@@ -58,6 +60,16 @@ class CustomARView: ARView {
         anchor.addChild(entity)
         // Adding to the scene
         scene.addAnchor(anchor)
+    }
+    
+    // Adding 3D object from reality composer to our scene
+    func placeBall(){
+        do {
+            let ball = try Ball.loadCena()
+            scene.addAnchor(ball)
+        } catch {
+            print(error)
+        }
     }
     
     // MARK: Configuration examples

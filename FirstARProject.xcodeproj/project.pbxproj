@@ -15,6 +15,7 @@
 		E99C826C2AC9ECC000F019FF /* CustomARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C826B2AC9ECC000F019FF /* CustomARViewRepresentable.swift */; };
 		E99C826F2AC9F97D00F019FF /* ARAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C826E2AC9F97D00F019FF /* ARAction.swift */; };
 		E99C82722AC9FA3F00F019FF /* ARManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C82712AC9FA3F00F019FF /* ARManager.swift */; };
+		E99C82742ACA049D00F019FF /* ball.rcproject in Sources */ = {isa = PBXBuildFile; fileRef = E99C82732ACA049D00F019FF /* ball.rcproject */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		E99C826B2AC9ECC000F019FF /* CustomARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARViewRepresentable.swift; sourceTree = "<group>"; };
 		E99C826E2AC9F97D00F019FF /* ARAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARAction.swift; sourceTree = "<group>"; };
 		E99C82712AC9FA3F00F019FF /* ARManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARManager.swift; sourceTree = "<group>"; };
+		E99C82732ACA049D00F019FF /* ball.rcproject */ = {isa = PBXFileReference; lastKnownFileType = file.rcproject; path = ball.rcproject; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				E99C825A2AC9EB1800F019FF /* FirstARProjectApp.swift */,
 				E99C825C2AC9EB1800F019FF /* ContentView.swift */,
 				E99C825E2AC9EB1900F019FF /* Assets.xcassets */,
+				E99C82732ACA049D00F019FF /* ball.rcproject */,
 				E99C82602AC9EB1900F019FF /* Preview Content */,
 			);
 			path = FirstARProject;
@@ -174,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99C825D2AC9EB1800F019FF /* ContentView.swift in Sources */,
+				E99C82742ACA049D00F019FF /* ball.rcproject in Sources */,
 				E99C826F2AC9F97D00F019FF /* ARAction.swift in Sources */,
 				E99C826A2AC9EBB900F019FF /* CustomARView.swift in Sources */,
 				E99C825B2AC9EB1800F019FF /* FirstARProjectApp.swift in Sources */,
