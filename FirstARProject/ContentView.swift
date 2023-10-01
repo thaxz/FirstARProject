@@ -18,20 +18,32 @@ struct ContentView: View {
             .overlay(alignment: .bottom){
                 ScrollView(.horizontal){
                     HStack{
-                        Button("Place") {
+                        Button {
+                            // Passing remove action by combine
                             ARManager.shared.actionsStream.send(.placeBall)
+                        } label: {
+                            Image(systemName: "circle.fill")
+                                .resizable()
+                                .foregroundColor(.yellow)
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                                .padding()
+                                .background(.regularMaterial)
+                                .cornerRadius(16)
                         }
-                        .frame(width: 40, height: 40)
-                        .padding()
-                        .background(.regularMaterial)
-                        .cornerRadius(16)
-                        Button("Jump") {
-                            ARManager.shared.actionsStream.send(.playBallAnimation)
+                        
+                        Button {
+                            // Passing remove action by combine
+                            ARManager.shared.actionsStream.send(.removeAllAnchors)
+                        } label: {
+                            Image(systemName: "arrowtriangle.up.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                                .padding()
+                                .background(.regularMaterial)
+                                .cornerRadius(16)
                         }
-                        .frame(width: 40, height: 40)
-                        .padding()
-                        .background(.regularMaterial)
-                        .cornerRadius(16)
                         Button {
                             // Passing remove action by combine
                             ARManager.shared.actionsStream.send(.removeAllAnchors)
