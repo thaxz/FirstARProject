@@ -11,6 +11,8 @@
 		E99C825D2AC9EB1800F019FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C825C2AC9EB1800F019FF /* ContentView.swift */; };
 		E99C825F2AC9EB1900F019FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99C825E2AC9EB1900F019FF /* Assets.xcassets */; };
 		E99C82622AC9EB1900F019FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99C82612AC9EB1900F019FF /* Preview Assets.xcassets */; };
+		E99C826A2AC9EBB900F019FF /* CustomARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C82692AC9EBB900F019FF /* CustomARView.swift */; };
+		E99C826C2AC9ECC000F019FF /* CustomARViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99C826B2AC9ECC000F019FF /* CustomARViewRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		E99C825C2AC9EB1800F019FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E99C825E2AC9EB1900F019FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E99C82612AC9EB1900F019FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E99C82692AC9EBB900F019FF /* CustomARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARView.swift; sourceTree = "<group>"; };
+		E99C826B2AC9ECC000F019FF /* CustomARViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomARViewRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,7 @@
 		E99C82592AC9EB1800F019FF /* FirstARProject */ = {
 			isa = PBXGroup;
 			children = (
+				E99C82682AC9EBA900F019FF /* AR */,
 				E99C825A2AC9EB1800F019FF /* FirstARProjectApp.swift */,
 				E99C825C2AC9EB1800F019FF /* ContentView.swift */,
 				E99C825E2AC9EB1900F019FF /* Assets.xcassets */,
@@ -65,6 +70,15 @@
 				E99C82612AC9EB1900F019FF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E99C82682AC9EBA900F019FF /* AR */ = {
+			isa = PBXGroup;
+			children = (
+				E99C82692AC9EBB900F019FF /* CustomARView.swift */,
+				E99C826B2AC9ECC000F019FF /* CustomARViewRepresentable.swift */,
+			);
+			path = AR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +152,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99C825D2AC9EB1800F019FF /* ContentView.swift in Sources */,
+				E99C826A2AC9EBB900F019FF /* CustomARView.swift in Sources */,
 				E99C825B2AC9EB1800F019FF /* FirstARProjectApp.swift in Sources */,
+				E99C826C2AC9ECC000F019FF /* CustomARViewRepresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
